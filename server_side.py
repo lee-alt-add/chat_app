@@ -55,3 +55,6 @@ def start_server():
         client_socket, client_address = server_socket.accept()
         print(f"New connection from {client_address}")
         threading.Thread(target=handle_client, args=(client_socket,)).start()
+
+if __name__ == "__main__":
+    start_server()

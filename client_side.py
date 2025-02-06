@@ -4,6 +4,7 @@ import socket, threading
 
 def receive_messages(client_socket):
     """Receive messages from the server."""
+    
     while True:
         try:
             message = client_socket.recv(1024).decode('utf-8')
@@ -17,6 +18,7 @@ def receive_messages(client_socket):
 
 def start_client():
     """Start the chat client."""
+    
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect(('127.0.0.1', 5555))  # Replace with server IP
 
@@ -32,3 +34,6 @@ def start_client():
     while True:
         message = input()
         client.send(message.encode('utf-8'))
+        
+if __name__ == "__main__":
+    start_client()

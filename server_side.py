@@ -1,6 +1,6 @@
 import socket, threading
 
-HOST = "localhost"
+HOST = "0.0.0.0"
 PORT = 5555
 clients = {}
 client_names = {}
@@ -47,7 +47,7 @@ def start_server():
     """ Starts the server """
     
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(HOST, PORT)
+    server_socket.bind((HOST, PORT))
     server_socket.listen(5)
     print(f"Server started, waiting on connection...")
     

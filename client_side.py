@@ -32,7 +32,7 @@ def start_client():
 
     # Send messages to the server
     while True:
-        message = input()
+        message = input("'Me' >>> ")
         client.send(message.encode('utf-8'))
         
 if __name__ == "__main__":
